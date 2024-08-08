@@ -1,0 +1,25 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container p-3">
+    <h1> Filter  page </h1>
+<hr>
+
+  <ul>
+    <li> hi this narayan | {{ "hellow" |upper}}</li>
+    <li> hi this narayan | {{ "namate" |lower}}</li>
+    <li> hi this narayan | {{ "jaganath" | title}}</li>
+    <li>hi guys {{"narayan swain" | filesizeformat}}</li>
+    <li>today is {{"05-08-2024 " | date:'d-m-Y'}}</li>
+    <li>Name:{{"record.name" | fnu:3}}</li>
+     <li>Name:{{"record.name" | fffu}}</li>>
+  </ul>
+  {% if messages|length >= 100 %}
+   You have lots of messages today!
+{% endif %}
+
+</div>
+{% endblock %}
+
+ 

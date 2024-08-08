@@ -1,0 +1,37 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container">
+    <div class="row p-3">
+        
+    <table>
+        <tr>
+            <th>name</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>job</th>
+            <th>salary</th>
+            <th>address</th>
+        </tr>
+
+        {% for r in res%}
+        <tr>
+            <td>{{i.name}}</th>
+            <th>{{i.phone}}</th>
+            <th>{{i.email}}</th>
+            <th>{{i.job}}</th>
+            <th>{{i.salary}}</th>
+            <th>{{i.address}}</th>
+        </tr>
+
+        {%endfor%}
+
+        
+    </table>
+    </div>
+
+
+</div>
+
+{% endblock %}

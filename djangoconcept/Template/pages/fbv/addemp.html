@@ -1,0 +1,22 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container p-3">
+    <h1>FBV Add Employee record</h1>
+<hr>
+    <div class="row">
+        <div class="col-lg-8 bg-secondary p-3 rounded">
+            <div class="form-group">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{emp.as_p}}
+                    <input class="btn btn-dark" type="submit" value="Submit">
+                </form>
+                </div>
+            
+        </div>
+
+    </div>
+</div>
+{% endblock %}

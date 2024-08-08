@@ -1,0 +1,18 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container m-4">
+    <div class="row p-3">
+        <form method="post">
+            {%csrf_token%}
+            {{s}}
+            <input type="submit" value="find">
+        </form>
+    </div>
+
+    
+
+</div>
+
+{% endblock %}

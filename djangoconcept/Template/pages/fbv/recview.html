@@ -1,0 +1,54 @@
+
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+<div class="container text-center p-3">
+    <h1>FBV Records View</h1>
+    <a href="/addrec">
+        <button class="btn btn-primary">Add emp</button>
+    </a> 
+     
+<hr>
+ 
+
+<table class="table table-hover">  
+  <thead class="bg-dark">  
+   <tr >  
+    <th scope="col">Empid</th>  
+    <th scope="col">Name</th>  
+    <th scope="col">Salaey</th>  
+    <th scope="col">Company</th>  
+    <th scope="col">Designation</th> 
+    <th scope="col">Profile pic</th>
+    <th scope="col">Action</th   
+   </tr>  
+  </thead>  
+  <tbody>  
+    {% for emp in emprec %}
+     <tr>
+        <td>{{emp.empid}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.cname}}</td>
+        <td>{{emp.cdesg}}</td>
+        <td><img src="{{emp.pic.url}}" width="120px"></td>
+        <td>
+            <a href="/updaterec/{{emp.id}}">
+                <button class="btn btn-success">Update</button>
+            </a>
+            &nbsp;
+            <a href="/delrec/{{emp.id}}">
+                <button class="btn btn-danger">Delete</button>
+            </a>
+        </td>
+    </tr>
+     {% endfor %}  
+  
+</table>
+
+</div>
+       
+{% endblock %}         
+
+
+          

@@ -1,0 +1,32 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container p-3">
+    <h1> cart page </h1>
+<hr>
+
+<table class="table">
+    <tr>
+        <th>product Name</th>
+        <th>Price </th>
+        <th>Quantity</th>
+        <th>Desc</th>
+        <th>Review</th>
+        <th>Action</th>
+    </tr>
+    {% for key,value in request.COOKIES.items %}
+    {% if key != 'csrftoken' %}
+    <tr>
+      <td>{{key}}</td>
+      <td>{{value}}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+</table>
+    
+</div>
+{% endblock %}
+
+ 

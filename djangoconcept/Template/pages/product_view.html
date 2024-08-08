@@ -1,0 +1,60 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container p-3">
+    <h1>Add to cart </h1>
+    <a href="/cart">
+        <button>View cart</button>
+    </a>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <form method="post">
+          {% csrf_token %}
+          {{p.as_p}}
+          <input class="btn btn-dark" type="submit" value="Add cart">
+        </form>
+
+    </div>
+
+</div>
+<!--000-
+<table class="table">
+    <tr>
+        <th>product Name</th>
+        <th>Price </th>
+        <th>Quantity</th>
+        <th>Desc</th>
+        <th>Review</th>
+        <th>Action</th>
+    </tr>
+    {% for i in p %}
+    <tr>
+        <td>{{i.pname}}</td>
+        <td>{{i.pprice}}</td>
+        <td>{{i.pqty}}</td>
+        <td>{{i.desc}}</td>
+        <td>{{i.review}}</td>
+        <td>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" value="{{i.pname}}" name="pname" id="pname">
+                <input type="hidden" value="{{i.pprice}}" name="pprice" id="pprice">
+                <input type="hidden" value="{{i.pqty}}" name="pqty" id="pqty">
+                <input type="hidden" value="{{i.desc}}" name="desc" id="desc">
+                <input type="hidden" value="{{i.review}}" name="review" id="review">
+                <input type="submit" value="Add to cart" class="btn btn-primary">
+            </form>
+        </td>
+        
+    </tr>
+
+    {% endfor%}
+</table>
+-->
+</div>
+{% endblock %}
+
+ 

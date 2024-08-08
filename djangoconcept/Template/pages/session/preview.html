@@ -1,0 +1,40 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class="container p-3">
+    <div class="jumbotron border boder-3 p-3 rounded">
+        <h4 class="display-5">Product Information!</h4>
+        <p class=" text-success">Product name is {{ pname }}</p>
+        <p class=" text-success">Product price is {{ pprice }}</p>
+        <p class=" text-success">Product Quatity is {{ pqty }}</p>
+        <p class=" text-success">Product Description is {{ pdesc}}</p>
+        <p class=" text-success">Product review is {{ preview }}</p>
+        <br>
+        <p class=" text-success">User name is {{user_name }}</p>
+        <p class=" text-success">User email is {{ user_email }}</p>
+        <p class=" text-success">User phone is {{ user_phone }}</p>
+        <p class=" text-success">User Address is {{ user_address }}</p>
+        <hr class="my-4">
+        <p class="lead">Want add the above Details ?</p>
+        <form method="post" >
+            {% csrf_token %}
+            <input type="hidden" value="{{ pname}}" id="pname" name="pname">
+            <input type="hidden" value="{{ pprice}}" id="pprice" name="pprice">
+            <input type="hidden" value="{{ pqty}}" id="pqty" name="pqty">
+            <input type="hidden" value="{{ pdesc}}" id="pdesc" name="pdesc">
+            <input type="hidden" value="{{ preview}}" id="preview" name="preview">
+            <input type="hidden" value="{{ user_name }}" id="cname" name="cname">
+            <input type="hidden" value="{{ user_email }}" id="email" name="email">  
+            <input type="hidden" value="{{user_phone }}" id="phone" name="phone">
+            <input type="hidden" value="{{ user_address }}" id="address" name="address">
+
+            <input type="submit" value="Submit" class="btn btn-primary btn-lg">
+        </form>
+        
+      </div>
+      
+</div>
+
+
+{% endblock %}

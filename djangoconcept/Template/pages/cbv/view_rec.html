@@ -1,0 +1,50 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container text-center p-3">
+    <h1>CBV Records View</h1>
+    <a href="/cbvaddrec">
+        <button class="btn btn-primary">Add emp</button>
+    </a> 
+     
+<hr>
+ 
+
+<table class="table table-hover">  
+  <thead class="bg-secondary">  
+   <tr>  
+    <th scope="col">Stdno</th>  
+    <th scope="col">Name</th>  
+    <th scope="col">College</th> 
+    <th scope="col">Education</th> 
+    <th scope="col">Mark</th>
+    <th scope="col">Image</th>  
+    <th scope="col">Action</th   
+   </tr>  
+
+  </thead>  
+  <tbody>  
+    {% for std in rec_list %}
+     <tr>
+        <td>{{std.stdno}}</td>
+        <td>{{std.sname}}</td>
+        <td>{{std.college}}</td>
+        <td>{{std.Eductn}}</td>
+        <td>{{std.mark}}</td>
+        <td><img src="{{std.img.url}}" width="120px"></td>
+        <td>
+            <a href="/cbvdetailrec/{{std.id}}">
+                <button class="btn btn-success">View Details</button>
+            </a>
+          
+        </td>
+    </tr>
+     {% endfor %}  
+  
+</table>
+
+</div>
+       
+
+{% endblock%}

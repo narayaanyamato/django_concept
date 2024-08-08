@@ -1,0 +1,19 @@
+{% extends 'pages/index.html' %}
+{% load static %}
+{% block body_block%}
+
+<div class="container text-center p-3">
+    <h3>Do you want to delete the the information!</h3>  
+     <div class="text-center">
+        <form method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger" type="submit" value="Delete">
+        </form>
+        <a href="/cbvrecview">
+            <button class="btn btn-dark text-white">Back</button>
+        </a>
+
+     </div>
+</div>
+
+{%endblock%}
